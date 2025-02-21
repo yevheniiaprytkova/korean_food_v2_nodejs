@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "Haysung",
+    "ratingInternet": 4.3,
+    "urlLocation": "https://maps.app.goo.gl/5TxjoVSPWDLUbf7HA",
+    "location": "268-274 Springvale Rd, Springvale VIC 3171",
+    "distance": 11,
+    "openHours": "11am - 10pm (every day)",
+    "urlPlace": "https://www.haysungbbq.com/",
+    "image": "img/Haysung.png"
+  },
+  {
+    "id": 2,
+    "name": "Jubang",
+    "ratingInternet": 4.8,
+    "urlLocation": "https://maps.app.goo.gl/pUZPTEAeNrs6hPCs6",
+    "location": "123 Koornang Rd, Carnegie VIC 3163",
+    "distance": 16,
+    "openHours": "5pm - 9.30pm (every day) + 12pm - 2.30pm (Sat-Sun)",
+    "urlPlace": "https://www.jubangkbbq.com/",
+    "video": "img/Jubang-video3.mp4"
+  },
+  {
+    "id": 3,
+    "name": "BBQ-K Springvale",
+    "ratingInternet": 4.8,
+    "urlLocation": "https://maps.app.goo.gl/isbDCP8SSsM7WKTt9",
+    "location": "345 Springvale Rd, Springvale VIC 3171",
+    "distance": 12,
+    "openHours": "12pm - 3pm and 5pm - 10pm (every day)",
+    "urlPlace": "http://instagram.com/bbqk.springvale",
+    "video": "img/BBQ-K2.mp4"
+  },
+  {
+    "id": 4,
+    "name": "Ssam",
+    "ratingInternet": 4.8,
+    "urlLocation": "https://maps.app.goo.gl/tfwtCrmeHD7Q3rmM6",
+    "location": "96 Koornang Rd, Carnegie VIC 3163",
+    "distance": 14,
+    "openHours": "12pm - 2.30pm and 5.30pm - 10.30pm (every day)",
+    "urlPlace": "https://www.instagram.com/ssam_kbbq/",
+    "image": "img/Ssam.png"
+  },
+  {
+    "id": 5,
+    "name": "BBQ Code",
+    "ratingInternet": 4.7,
+    "urlLocation": "https://maps.app.goo.gl/mQsMa2RWdwKfesgi9",
+    "location": "249 Springvale Rd, Glen Waverley VIC 3150",
+    "distance": 26,
+    "openHours": "12pm - 9.30pm (every day)",
+    "urlPlace": "https://www.bbqcode.com.au/",
+    "image": "img/BBQ-Code.png"
+  },
+  {
+    "id": 6,
+    "name": "Moohan",
+    "ratingInternet": 4.9,
+    "urlLocation": "https://maps.app.goo.gl/jEFVP7sGooYCSxLC8",
+    "location": "970-972 Whitehorse Rd, Box Hill VIC 3128",
+    "distance": 23,
+    "openHours": "12pm - 3pm and 5pm - 10pm (every day)",
+    "urlPlace": "https://www.instagram.com/moohan.au/?hl=en",
+    "video": "img/Moohan.mp4"
+  },
+  {
+    "id": 7,
+    "name": "Mansae",
+    "ratingInternet": 4.6,
+    "urlLocation": "https://maps.app.goo.gl/cUsmMgek6U2YZ47M9",
+    "location": "12/2 Burwood Hwy, Burwood East VIC 3151",
+    "distance": 18,
+    "openHours": "5pm - 10pm (Wed-Mon) + 12pm - 3pm (Sat-Sun)",
+    "urlPlace": "http://www.mansaekbbq.com.au/",
+    "video": "img/Mansae.mp4"
+  }
+]

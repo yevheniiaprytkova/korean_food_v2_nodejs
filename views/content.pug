@@ -1,0 +1,59 @@
+extends base
+
+block content 
+  section#places.section-places
+    .container 
+      .heading 
+        span.subheading Best places 
+        h2.heading-secondary Just choose what you wanna eat today 
+
+    .list.container 
+      .sort 
+        .sort-box 
+          button.sort-btn 
+            span Sort by 
+            ion-icon.sort-icon(name='caret-down')
+
+          ul.sort-box-list 
+            li.sort-box-item.rating-btn 
+              button Rating 
+            li.sort-box-item 
+              button.distance-btn Distance 
+
+      ul.sort-list 
+
+        each place in places
+          li.sort-item(class=`sort-item-${place.id}`)
+            .place 
+
+              - if (place.image)
+                .place-img-box
+                  img.place-img(src=`${place.image}`)
+              - if (place.video)
+                .place-video-box
+                  video.place-video(loop muted autoplay)
+                    source(src=`${place.video}` type="video/mp4")
+
+              .place-text-box
+                a#place-name.btn(href=`${place.urlPlace}`)= place.name
+                ul.list
+                  li.list-item 
+                    ion-icon.place-icon(name='star')
+                    span#rating= place.ratingInternet
+                  li.list-item 
+                    ion-icon.place-icon(name='location')
+                    a.place-address(href=`${place.urlLocation}`)= place.location
+                    span#distance= `${place.distance} km`
+                  li.list-item 
+                    ion-icon.place-icon(name='time')
+                    span= place.openHours 
+                  li.list-item 
+                    ion-icon.place-icon(name='chatbubble-ellipses')
+                    a.place-address(href=`http://127.0.0.1:5000/places/${place._id}/reviews`)= `Our reviews (our rating - ${place.ratingsAverage})`
+
+
+              a.btn.btn--review(href=`http://127.0.0.1:5000/places/${place._id}/reviews`) Add review
+
+  include createNewPlace
+
+      

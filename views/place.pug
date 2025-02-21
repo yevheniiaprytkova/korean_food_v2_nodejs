@@ -1,0 +1,64 @@
+extends base
+
+mixin reviewCard(review)
+  .reviews__card
+    .reviews__avatar
+      li.list-item
+        
+        img.reviews__avatar-img(src=`${review.users[0].userImage}`)
+        h6.reviews__user= review.users[0].userName 
+
+    p.reviews__text= review.review
+    .reviews__rating
+      each star in [1, 2, 3, 4, 5]
+        ion-icon.reviews__star(class=`reviews__star--${review.rating >= star ? 'active' : 'inactive' }` name='star')
+
+        
+
+block body
+  .container
+    h2.heading-secondary.place-title-name= place.name
+    .container
+      span.review-name Our reviews 
+      .section-reviews
+        if (!place.reviews[0])
+          p#center.form-label Don't have any reviews yet!
+        else
+          .reviews
+            each review in place.reviews 
+              +reviewCard(review)
+           
+
+    .container
+      form.form-review
+        span.review-name Add new review
+        .form-item 
+          label.form-label(for='review') Write your review 
+          input#review.form-input(type='text', name='review')
+        .form-item 
+          label.form-label(for='rating')= `Write your rating (from 1 to 5)` 
+          input#rating.form-input(type='number', name='rating' min="1" max="5")
+        .form-item 
+          input#yevheniia(type="radio" name="person" value="Yevheniia")
+          label.form-label(for="yevheniia")   Yevheniia
+          br
+          br
+          input#eugen(type="radio" name="person" value="Eugen")
+          label.form-label(for="eugen")   Eugen
+        .form-item 
+          button.btn-form Save review
+        .form-item
+          button.btn-clear.btn-form Clear form
+
+    a.btn-back(href='http://127.0.0.1:5000/') 
+      ion-icon.place-icon(name="arrow-back")
+      
+
+  footer.footer 
+    p#place-id.hide= place._id 
+    span.form-label If you have ideas for this site, just write a message to zheka.prytkova91@gmail.com
+    
+
+
+
+

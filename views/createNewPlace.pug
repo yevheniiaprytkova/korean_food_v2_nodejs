@@ -1,0 +1,36 @@
+.container#newPlace
+  form.form-place
+    span.review-name Add new place
+    .form-item 
+      label.form-label(for='name') Write place name
+      input#name.form-input(type='text', name='name')
+    .form-item 
+      label.form-label(for='ratingInternet') Write rating from map
+      input#ratingInternet.form-input(type='text', name='ratingInternet')
+    .form-item 
+      label.form-label(for='urlLocation') Copy url location from map
+      input#urlLocation.form-input(type='text', name='urlLocation')
+    .form-item 
+      label.form-label(for='location') Write location of this place
+      input#location.form-input(type='text', name='location')
+    .form-item 
+      label.form-label(for='distanceMap') Figure out the distance to this place
+      input#distanceMap.form-input(type='text', name='distanceMap')
+    .form-item 
+      label.form-label(for='openHours') Check the open hours
+      input#openHours.form-input(type='text', name='openHours')
+    .form-item 
+      label.form-label(for='urlPlace') Add the website url of this place
+      input#urlPlace.form-input(type='text', name='urlPlace')
+    .form-item 
+      label.form-label(for='image') Upload photo 
+      input#image.form-input-btn(type='file', name='image', accept='*')
+    .form-item 
+      label.form-label(for='video') Upload video 
+      input#video.form-input-btn(type='file', name='video', accept='*')
+
+
+    
+    .form-item 
+      button.btn-form Add new place
+
