@@ -87,8 +87,6 @@ reviewSchema.pre(/^findOneAnd/, async function (next) {
 });
 
 reviewSchema.post(/^findOneAnd/, async function () {
-  console.log(this.r);
-  console.log(this.r.constructor);
   await this.r.constructor.calcAverageRatings(this.r.place);
 });
 

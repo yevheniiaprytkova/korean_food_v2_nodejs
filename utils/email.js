@@ -4,6 +4,7 @@ const htmlToText = require("html-to-text");
 
 module.exports = class Email {
   constructor(url) {
+    // this.to = "yevheniia@mailsac.com";
     this.to = "zheka.prytkova91@gmail.com";
     this.firstName = "Yevheniia";
     this.url = url;

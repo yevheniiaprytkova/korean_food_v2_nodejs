@@ -3,8 +3,6 @@ const viewController = require("../controllers/viewController");
 
 const router = express.Router();
 
-router.use(viewController.alerts);
-
 router.get("/", viewController.getContent);
 router.get("/places/:placeId/reviews", viewController.getPlace);
 module.exports = router;

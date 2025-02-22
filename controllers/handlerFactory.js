@@ -36,19 +36,18 @@ exports.updateOne = (Model) =>
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
-    if (Model === "Review") {
-      const url = `${req.url}`;
-      // const url = `${req.protocol}://${req.get("host")}/places/${
-      //   req.data.place
-      // }/reviews`;
-      await new Email(url).sendNewReview();
-    }
+
     res.status(201).json({
       status: "success",
       data: {
         data: doc,
       },
     });
+
+    const url = `${req.protocol}://${req.get("host")}/places/${
+      req.body.place
+    }/reviews`;
+    await new Email(url).sendNewReview();
   });
 
 exports.getOne = (Model, popOptions) =>

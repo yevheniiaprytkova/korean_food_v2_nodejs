@@ -119,14 +119,13 @@ window.onload = function () {
       const rating = document.getElementById("rating").value;
       const place = document.getElementById("place-id").textContent;
       let person;
-      console.log(review, rating);
 
       const personName = document.getElementsByName("person");
       for (let i = 0; i < personName.length; i++) {
         if (personName[i].checked) person = personName[i].value;
       }
 
-      if (review === "" && rating === "null") {
+      if (review === "" || rating === "null") {
         return showAlert("error", "Cannot add empty review!");
       }
       createReview(review, rating, place, person);
