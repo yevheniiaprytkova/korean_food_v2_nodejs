@@ -1,6 +1,7 @@
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const APIFeatures = require("../utils/apiFeatures");
+const Email = require("../utils/email");
 
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
@@ -35,6 +36,13 @@ exports.updateOne = (Model) =>
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
+    if (Model === "Review") {
+      const url = `${req.url}`;
+      // const url = `${req.protocol}://${req.get("host")}/places/${
+      //   req.data.place
+      // }/reviews`;
+      await new Email(url).sendNewReview();
+    }
     res.status(201).json({
       status: "success",
       data: {

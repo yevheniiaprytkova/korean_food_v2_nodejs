@@ -604,6 +604,10 @@ header p {
 /* ************************* */
 
 @media (max-width: 34em) {
+  html {
+    font-size: 40.625%;
+  }
+
   .sort-btn {
     top: -1.5%;
   }
