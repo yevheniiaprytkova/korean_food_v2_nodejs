@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import axios from "axios";
+import { showAlert } from "./alert";
 
 export const createReview = async (review, rating, place, person) => {
   try {
@@ -19,6 +20,8 @@ export const createReview = async (review, rating, place, person) => {
       location.reload();
     }
   } catch (err) {
+    showAlert("error", "Cannot add empty review!");
+
     console.error(err.message);
   }
 };

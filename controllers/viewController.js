@@ -1,5 +1,11 @@
 const Place = require("../models/placeModel");
 
+exports.alerts = (req, res, next) => {
+  const { alert } = req.query;
+  console.log(alert);
+  next();
+};
+
 exports.getContent = async (req, res, next) => {
   try {
     const places = await Place.find();
