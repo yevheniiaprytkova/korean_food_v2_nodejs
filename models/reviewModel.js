@@ -63,7 +63,6 @@ reviewSchema.statics.calcAverageRatings = async function (placeId) {
       },
     },
   ]);
-
   if (stats.length > 0) {
     await Place.findByIdAndUpdate(placeId, {
       ratingsAverage: stats[0].avgRating,
@@ -82,7 +81,7 @@ reviewSchema.post("save", async function () {
 });
 
 reviewSchema.pre(/^findOneAnd/, async function (next) {
-  this.r = await this.findOne();
+  this.r = await this.findOne().clone();
   next();
 });
 

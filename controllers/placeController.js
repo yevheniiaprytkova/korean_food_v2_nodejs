@@ -1,5 +1,6 @@
 const Place = require("../models/placeModel");
 const factory = require("./handlerFactory");
+const catchAsync = require("../utils/catchAsync");
 
 exports.getAllPlaces = factory.getAll(Place);
 exports.getPlace = factory.getOne(Place, { path: "reviews" });

@@ -2,6 +2,10 @@ extends base
 
 mixin reviewCard(review)
   .reviews__card
+    button.delete-review
+      ion-icon.place-icon(name="close-circle")
+      p.hide.reviewObj= review
+      p.hide.reviewId= review._id
     .reviews__avatar
       li.list-item
         if (review.users[0])

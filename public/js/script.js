@@ -3,6 +3,7 @@ import "@babel/polyfill";
 import { createReview, clearForm } from "./createReview";
 import { createPlace } from "./createPlace";
 import { showAlert } from "./alert";
+import { deleteReview } from "./deleteReview";
 
 window.onload = function () {
   /////////////////////////////////////////////////////
@@ -166,6 +167,18 @@ window.onload = function () {
         image,
         video
       );
+    });
+
+  /////////////////////////////////////////////////////
+  // Delete Review
+  /////////////////////////////////////////////////////
+  const deleteBtn = document.querySelector(".delete-review");
+  if (deleteBtn)
+    deleteBtn.addEventListener("click", function () {
+      const review = document.querySelector(".reviewObj").textContent;
+      const reviewId = document.querySelector(".reviewId").textContent;
+
+      deleteReview(review, reviewId);
     });
 
   console.log("Working");
