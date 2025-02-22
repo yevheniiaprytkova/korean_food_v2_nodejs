@@ -126,7 +126,7 @@ window.onload = function () {
         if (personName[i].checked) person = personName[i].value;
       }
 
-      if (review === "" && rating === null) {
+      if (review === "" && rating === "null") {
         return showAlert("error", "Cannot add empty review!");
       }
       createReview(review, rating, place, person);
