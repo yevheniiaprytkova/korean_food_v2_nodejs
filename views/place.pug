@@ -16,49 +16,50 @@ mixin reviewCard(review)
         
 
 block body
-  .container
-    h2.heading-secondary.place-title-name= place.name
+  body(data-alert=`${alert ? alert : ''}`) 
     .container
-      span.review-name Our reviews 
-      .section-reviews
-        if (!place.reviews[0])
-          p#center.form-label Don't have any reviews yet!
-        else
-          .reviews
-            each review in place.reviews 
-              +reviewCard(review)
-           
+      h2.heading-secondary.place-title-name= place.name
+      .container
+        span.review-name Our reviews 
+        .section-reviews
+          if (!place.reviews[0])
+            p#center.form-label Don't have any reviews yet!
+          else
+            .reviews
+              each review in place.reviews 
+                +reviewCard(review)
+            
 
-    .container
-      form.form-review
-        span.review-name Add new review
-        .form-item 
-          label.form-label(for='review') Write your review 
-          input#review.form-input(type='text', name='review')
-        .form-item 
-          label.form-label(for='rating')= `Write your rating (from 1 to 5)` 
-          input#rating.form-input(type='number', name='rating' min="1" max="5")
-        .form-item 
-          input#yevheniia(type="radio" name="person" value="Yevheniia")
-          label.form-label(for="yevheniia")   Yevheniia
-          br
-          br
-          input#eugen(type="radio" name="person" value="Eugen")
-          label.form-label(for="eugen")   Eugen
-        .form-item 
-          button.btn-form Save review
-        .form-item
-          button.btn-clear.btn-form Clear form
+      .container
+        form.form-review
+          span.review-name Add new review
+          .form-item 
+            label.form-label(for='review') Write your review 
+            input#review.form-input(type='text', name='review')
+          .form-item 
+            label.form-label(for='rating')= `Write your rating (from 1 to 5)` 
+            input#rating.form-input(type='number', name='rating' min="1" max="5")
+          .form-item 
+            input#yevheniia(type="radio" name="person" value="Yevheniia")
+            label.form-label(for="yevheniia")   Yevheniia
+            br
+            br
+            input#eugen(type="radio" name="person" value="Eugen")
+            label.form-label(for="eugen")   Eugen
+          .form-item 
+            button.btn-form Save review
+          .form-item
+            button.btn-clear.btn-form Clear form
 
-    a.btn-back(href='places') 
-    //- a.btn-back(href='https://korean-restaurants-cab9281be813.herokuapp.com/') 
-      ion-icon.place-icon(name="arrow-back")
+      a.btn-back(href='places') 
+      //- a.btn-back(href='https://korean-restaurants-cab9281be813.herokuapp.com/') 
+        ion-icon.place-icon(name="arrow-back")
+        
+
+    footer.footer 
+      p#place-id.hide= place._id 
+      span.form-label If you have ideas for this site, just write a message to zheka.prytkova91@gmail.com
       
-
-  footer.footer 
-    p#place-id.hide= place._id 
-    span.form-label If you have ideas for this site, just write a message to zheka.prytkova91@gmail.com
-    
 
 
 

@@ -119,6 +119,7 @@ window.onload = function () {
       const rating = document.getElementById("rating").value;
       const place = document.getElementById("place-id").textContent;
       let person;
+      console.log(review, rating);
 
       const personName = document.getElementsByName("person");
       for (let i = 0; i < personName.length; i++) {
