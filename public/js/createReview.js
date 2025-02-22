@@ -21,8 +21,6 @@ export const createReview = async (review, rating, place, person) => {
     }
   } catch (err) {
     showAlert("error", "Cannot add empty review!");
-
-    console.error(err.message);
   }
 };
 

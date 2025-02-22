@@ -2,6 +2,7 @@
 import "@babel/polyfill";
 import { createReview, clearForm } from "./createReview";
 import { createPlace } from "./createPlace";
+import { showAlert } from "./alert";
 
 window.onload = function () {
   /////////////////////////////////////////////////////
@@ -125,10 +126,10 @@ window.onload = function () {
         if (personName[i].checked) person = personName[i].value;
       }
 
-      // if (review === "" && rating === null) {
-      // } else {
+      if (review === "" && rating === null) {
+        return showAlert("error", "Cannot add empty review!");
+      }
       createReview(review, rating, place, person);
-      // }
     });
 
   const clearFormBtn = document.querySelector(".btn-clear");
