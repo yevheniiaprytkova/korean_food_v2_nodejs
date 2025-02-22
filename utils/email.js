@@ -3,12 +3,15 @@ const pug = require("pug");
 const htmlToText = require("html-to-text");
 
 module.exports = class Email {
-  constructor(url) {
+  constructor(url, review, rating, person) {
     // this.to = "yevheniia@mailsac.com";
     this.to = "zheka.prytkova91@gmail.com";
     this.firstName = "Yevheniia";
     this.url = url;
     this.from = `${process.env.EMAIL_FROM}`;
+    this.review = review;
+    this.rating = rating;
+    this.person = person;
   }
 
   newTransport() {
@@ -41,6 +44,9 @@ module.exports = class Email {
       {
         firstName: this.firstName,
         url: this.url,
+        review: this.review,
+        rating: this.rating,
+        person: this.person,
         subject,
       }
     );

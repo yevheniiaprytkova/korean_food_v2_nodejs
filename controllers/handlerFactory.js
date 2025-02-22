@@ -47,7 +47,10 @@ exports.createOne = (Model) =>
     const url = `${req.protocol}://${req.get("host")}/places/${
       req.body.place
     }/reviews`;
-    await new Email(url).sendNewReview();
+    const review = req.body.review;
+    const rating = req.body.rating;
+    const person = req.body.person;
+    await new Email(url, review, rating, person).sendNewReview();
   });
 
 exports.getOne = (Model, popOptions) =>
