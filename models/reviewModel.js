@@ -81,12 +81,12 @@ reviewSchema.post("save", async function () {
   await this.constructor.calcAverageRatings(this.place);
 });
 
-reviewSchema.pre(/^find/, async function (next) {
+reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.r = await this.findOne();
   next();
 });
 
-reviewSchema.post(/^find/, async function () {
+reviewSchema.post(/^findOneAnd/, async function () {
   await this.r.constructor.calcAverageRatings(this.r.place);
 });
 
